@@ -1,0 +1,177 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+/* -----------------------------------------hearder------------------------ */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    margin: 0;
+}
+
+.heardingNav {
+    background-color: rgb(175, 175, 175);
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    gap: 10px;
+    padding-right: 20px;
+    height: 70px;
+}
+
+.heardingImg {
+    background-repeat: no-repeat;
+    width: 40px;
+    height: 40px;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+/* -------------------------------------------main---------------------------------- */
+.mainContainer {
+    display: grid;
+    grid-template-columns: 20% 80%;
+}
+
+.sidebarLeft {
+    color: white;
+    background-color: #041434;
+    height: 100vh;
+}
+
+
+.mainContent-div {
+    padding: 30px 20px 0 20px;
+}
+
+.mainContent-hearding {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.newSkillBtn {
+    background-color: #2664eb;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 0 10px;
+}
+
+.tableImg {
+    width: 100%;
+    height: 25px;
+    background-repeat: no-repeat;
+    object-fit: cover;
+}
+
+table {
+    width: 100%;
+    text-align: center;
+    line-height: 2;
+}
+
+table,
+th,
+td {
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+
+.deleteBtn {
+    background-color: white;
+    color: red;
+    border: 1px solid red;
+    border-radius: 4px;
+    padding: 0 10px;
+}
+
+.formModal {
+    display: none;
+    position: fixed;
+    background-color: rgba(176, 174, 174, 0.7);
+    width: 100%;
+    height: 100%;
+    top: 70px;
+}
+
+.submitForm {
+    border: none !important;
+    border-radius: 4px;
+    position: relative;
+    background-color: white;
+    border: 1px solid black;
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    width: 400px;
+    top: 25%;
+    left: 25%;
+}
+
+.submitForm h3 {
+    position: relative;
+}
+
+.submitForm span {
+    position: absolute;
+    top: 5px;
+    right: 15px;
+    font-size: 30px;
+    font-weight: 550;
+
+}
+
+.submitForm label {
+    padding-top: 10px;
+}
+
+.submitFormBTN {
+    margin-top: 10px;
+    justify-content: end;
+    display: flex;
+    gap: 10px;
+}
+
+.submitFormBTN-Delete {
+    background-color: red;
+    color: white;
+    border: 1px solid red;
+    border-radius: 4px;
+    padding: 0 5px;
+}
+
+.submitFormBTN-Add {
+    background-color: #2865eb;
+    color: white;
+    border: 1px solid #2865eb;
+    border-radius: 4px;
+    padding: 0 5px;
+}
+
+td {
+    padding: 6px;
+}
+
+.sidebarLeft h3 a {
+    text-decoration: none;
+    color: white;
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 1.7;
+    height: 100%;
+    width: 100%;
+    padding: 16px 24px;
+    display: block;
+}
+
+.sidebarLeft h3 .active,
+.sidebarLeft h3:hover a {
+    background-color: rgba(149, 186, 222, 0.6);
+    color: #fafafa;
+}

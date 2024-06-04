@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Questrial&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+    rel="stylesheet" />
+  <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+  <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
+  <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="./admin.css" />
+  <title>Đức Anh</title>
+  <link rel="icon" type="png" href="../20240422T010622Z-001/De4_assets/images/cloud.png" />
+</head>
+
+<body>
+  <header class="header-content">
+    <div class="site-nav">
+      <div class="admin-name">Nguyễn Đức Anh</div>
+      <div class="admin-icon"></div>
+      <div class="header-icon">
+        <box-icon name="chevron-down"></box-icon>
+      </div>
+    </div>
+  </header>
+  <main>
+    <div class="nav-bar">
+      <div class="nav-bar-skill">
+        <div class="nav-btn white-text checked" onclick="openSkillNav()" id="skill-nav">
+          Kỹ năng
+        </div>
+      </div>
+      <div class="nav-bar-project">
+        <div class="nav-btn white-text" onclick="openProjectNav()" id="project-nav">
+          Dự án
+        </div>
+      </div>
+    </div>
+    <div class="main-content">
+      <div class="form-add-el hidden" id="form-add-skill">
+        <section id="form-add-el">
+          <form action="" class="form-skill" onsubmit="submitSkillForm(event)">
+            <p class="form-skill-header">Thêm mới kỹ năng</p>
+            <div class="skill-input">
+              <label for="" class="label-product">Tên kỹ năng</label>
+              <input type="text" id="skillName" name="skillName" />
+            </div>
+            <div class="error-cf-skill"></div>
+            <div class="skill-input">
+              <label for="" class="label-product">Năm kinh nghiệm</label>
+              <input type="text" id="skillYears" name="skillYears" />
+            </div>
+            <div class="error-cf-skill"></div>
+            <div class="skill-input">
+              <label for="" class="label-product">Hình ảnh</label>
+              <input type="text" id="skillImg" name="skillImg" />
+            </div>
+            <div class="error-cf-skill"></div>
+            <div style="display: flex; justify-content: center; gap: 12px">
+              <button type="button" onclick="closeSkillForm()" class="btn">
+                Huỷ
+              </button>
+              <button type="submit" id="submit-skill-form" class="btn btn-submit">
+                Thêm
+              </button>
+            </div>
+          </form>
+        </section>
+      </div>
+      <div class="skill-content" id="skill-content">
+        <div class="content-header">
+          <h1>Kỹ năng</h1>
+          <button type="button" class="btn-add-skill btn white-text" onclick="OpenSkillForm()">
+            Thêm mới kỹ năng
+          </button>
+        </div>
+        <section id="table" class="main-table-content">
+          <table>
+            <thead>
+              <tr>
+                <th>STT</th>
+                <th>Tên kỹ năng</th>
+                <th>Hình ảnh</th>
+                <th>Năm kinh nghiệm</th>
+                <th>Ngày thêm</th>
+                <th>Chức năng</th>
+              </tr>
+            </thead>
+            <tbody id="tbodyList">
+              <!-- <tr>
+                  <td class="middle">1</td>
+                  <td>ReactJS</td>
+                  <td class="middle">
+                    <img
+                      width="50px"
+                      src="../20240422T010622Z-001/De4_assets/images/logos/react.svg"
+                      alt=""
+                    />
+                  </td>
+                  <td>1 Năm</td>
+                  <td>21/5/2024</td>
+                  <td class="middle">
+                    <button class="btn">Xoá</button>
+                  </td>
+                </tr> -->
+            </tbody>
+          </table>
+        </section>
+      </div>
+      <div class="form-add-el hidden" id="form-add-project">
+        <section id="form-add-el">
+          <form action="" class="form-skill" onsubmit="submitProjectForm(event)" id="form-project">
+            <p class="form-skill-header">Thêm mới dự án</p>
+            <div class="skill-input">
+              <label for="" class="label-product">Tên dự án</label>
+              <input type="text" id="projectName" name="projectName" />
+            </div>
+            <div class="error-cf-project"></div>
+            <div class="skill-input">
+              <label for="" class="label-product">Hình ảnh</label>
+              <input type="text" id="projectImg" name="projectImg" />
+            </div>
+            <div class="error-cf-project"></div>
+            <div class="skill-input">
+              <label for="" class="label-product">Công nghệ sử dụng</label>
+              <input type="text" id="projectTech" name="projectTech" />
+            </div>
+            <div class="error-cf-project"></div>
+            <div class="skill-input">
+              <label for="" class="label-product">Link github</label>
+              <input type="text" id="projectGit" name="projectGit" />
+            </div>
+            <div class="error-cf-project"></div>
+            <div style="display: flex; justify-content: center; gap: 12px">
+              <button type="button" onclick="closeProjectForm()" class="btn">
+                Huỷ
+              </button>
+              <button type="submit" id="submit-project-form" class="btn btn-sumbit"
+                style="background-color: #2563eb; color: white; border: none">
+                Thêm
+              </button>
+              <button type="button" id="update-form" class="btn btn-sumbit hidden"
+                style="background-color: #2563eb; color: white; border: none;">
+                Sửa
+              </button>
+            </div>
+          </form>
+        </section>
+      </div>
+      <div class="project-content hidden" id="project-content">
+        <div class="content-header">
+          <h1>Dự án</h1>
+          <button type="button" class="btn-add-project btn white-text" onclick="OpenProjectForm()">
+            Thêm mới dự án
+          </button>
+        </div>
+        <section id="table" class="main-table-content">
+          <table>
+            <thead>
+              <tr>
+                <th>STT</th>
+                <th>Tên dự án</th>
+                <th>Hình ảnh</th>
+                <th>Công nghệ</th>
+                <th>Ngày thêm</th>
+                <th>Chức năng</th>
+              </tr>
+            </thead>
+            <tbody id="tbodyProjet">
+              <!-- <tr>
+                  <td class="middle">1</td>
+                  <td>Shoppe</td>
+                  <td class="middle">
+                    <img
+                      width="50px"
+                      src="../20240422T010622Z-001/De4_assets/images/logos/vue.svg"
+                      alt=""
+                    />
+                  </td>
+                  <td>Coong nghe</td>
+                  <td>21/5/2024</td>
+                  <td class="middle">
+                    <button class="btn btn-del">Sửa</button>
+                    <button class="btn">Xoá</button>
+                  </td>
+                </tr> -->
+            </tbody>
+          </table>
+        </section>
+      </div>
+    </div>
+  </main>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <script src="./admin.js"></script>
+</body>
+
+</html>
